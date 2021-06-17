@@ -1,0 +1,70 @@
+main#form {
+  max-width: 500px;
+  width: 60vw;
+  min-width: 300px;
+  padding: 64px;
+  margin-top: 50px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 5px 15px 20px 6px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+form {
+  fieldset {
+    border: 1px solid rgba(0,0,0,.07);
+    border-radius: 8px;
+    padding: 24px 16px;
+    margin: 16px 0;
+    .input-block {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+
+      &.inline {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      > input:not([type="checkbox"]) {
+        position: relative;
+        padding: 12px 5px 8px 5px;
+        width: 100%;
+        outline: 0;
+        border: 0;
+        box-shadow: 0 2px 0 0 #eee;
+        transition: box-shadow 150ms ease-out;
+
+        background: #fefefe;
+
+        border-radius: 8px;
+        &:focus {
+          box-shadow: 0 2px 0 0 #007bffd8;
+        }
+
+        &:hover {
+          box-shadow: 0 2px 0 0 #ddd;
+        }
+
+        &:not(:blank){
+          box-shadow: 0 2px 0 0 lightgreen;
+
+          &:invalid {
+            box-shadow: 0 2px 0 0 red;
+          }
+
+          &:valid {
+            box-shadow: 0 2px 0 0 chartreuse;
+          }
+        }
+      }
+
+      & + .input-block {
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+
